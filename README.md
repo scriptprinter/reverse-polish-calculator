@@ -5,9 +5,11 @@ of the stack or the entire stack.
 
 # Usage
 
-Just import the file "rpolish.py"
+Just import the file `rpolish.py`
 
 ## Examples
+
+### Basic operations
 
 ```python
 >>> import rpolish
@@ -19,6 +21,13 @@ Just import the file "rpolish.py"
 3.0
 >>> rpolish.calculate("1 2 + 3 4 + 5 6 +", return_stack=True) # Returns the stack
 [3.0, 7.0, 11.0]
+```
+
+### Extra operations
+
+```python
+>>> rpolish.calculate("10 5 :", return_stack=True) # Swaps the two top numbers
+[5.0, 1.0]
 ```
 
 The extra function `create_tokens()` get a reverse polish expression and return a list of tokens.
@@ -37,12 +46,15 @@ The extra function `create_tokens()` get a reverse polish expression and return 
 Calculates a reverse polish expression, using spaces to separate
 tokens.
 
-Operations supported:
+Basic operations:
     + Addition
     - Subtraction
     * Multiplication
     / Division
     % Modulo (remainder of division)
+
+Extra operations:
+    : Swaps the two top numbers
 
 If return_stack is True, the stack is returned, otherwise the top item of
 the stack is returned.
@@ -72,3 +84,7 @@ so you can say of any problem, i am reading the PEP-8 now.
 ## 05/10/2020
 
 + First implementation
+
+## 06/10/2020
+
++ New extra operation `:` that swaps the two top numbers

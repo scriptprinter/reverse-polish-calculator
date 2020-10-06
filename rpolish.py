@@ -25,12 +25,15 @@ def calculate(expression, return_stack=False):
     """Calculates a reverse polish expression, using spaces to separate
     tokens.
 
-    Operations supported:
+    Basic operations:
         + Addition
         - Subtraction
         * Multiplication
         / Division
         % Modulo (remainder of division)
+
+    Extra operations:
+        : Swaps the two top numbers
 
     If return_stack is True, the stack is returned, otherwise the top item of
     the stack is returned.
@@ -59,6 +62,11 @@ def calculate(expression, return_stack=False):
         elif token == "%":
             number2 = stack.pop()
             stack.append(stack.pop() % number2)
+        elif token == ":":
+            number2 = stack.pop()
+            number1 = stack.pop()
+            stack.append(number2)
+            stack.append(number1)
 
     return stack if return_stack else stack.pop()
     

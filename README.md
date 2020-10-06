@@ -71,4 +71,4 @@ so you can say of any problem, i am reading the PEP-8 now.
 
 ## 05/10/2020
 
-+ Frist implementation
++ First implementation
